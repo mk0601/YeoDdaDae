@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApproveShareParkInformationActivity">
+
+    <ImageButton
+        android:id="@+id/approveShareParkInfoBackBtn"
+        android:src="@drawable/back_icon"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:text="공유주차장 승인"
+        android:textSize="25sp"
+        android:textColor="@color/sub"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/approveShareParkInfoBackBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/approveShareParkInfoBackBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/approveShareParkInfoBackBtn"
+        app:layout_constraintBottom_toTopOf="@+id/approveBtn"
+        android:layout_marginTop="10dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/approveShareParkInfoIdTxt"
+                android:text="공유 주차장 번호"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoIdContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoIdTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoShareParkAddressTxt"
+                android:textSize="18sp"
+                android:text="공유주차장 주소"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoIdContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoShareParkNewAddressContentTxt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoShareParkAddressTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoShareParkOldAddressContentTxt"
+                android:textSize="18sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoShareParkNewAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoShareParkDetailaddressContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoShareParkOldAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoOwnerIdTxt"
+                android:textSize="18sp"
+                android:text="공유자 ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoShareParkDetailaddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoOwnerIdContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoOwnerIdTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoNameTxt"
+                android:textSize="18sp"
+                android:text="공유자명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoOwnerIdContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoNameContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoNameTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoPhoneTxt"
+                android:textSize="18sp"
+                android:text="공유자 전화번호"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoNameContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoPhoneContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoPhoneTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoEmailTxt"
+                android:textSize="18sp"
+                android:text="공유자 이메일"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoPhoneContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoEmailContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoEmailTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoRelationTxt"
+                android:textSize="18sp"
+                android:text="공유자의 주차장과의 관계"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoEmailContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoRelationContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoRelationTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoPriceTxt"
+                android:text="주차장 가격"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoRelationContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoPriceContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/approveShareParkInfoPriceTxt"
+                app:layout_constraintLeft_toRightOf="@+id/approveShareParkInfoHourPerTxt"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoHourPerTxt"
+                android:text="시간 당"
+                android:textSize="15sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/approveShareParkInfoPriceContentTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/approveShareParkInfoPriceContentTxt"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoPtTxt"
+                android:text="pt"
+                android:textSize="15sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/approveShareParkInfoPriceContentTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/approveShareParkInfoPriceContentTxt"
+                app:layout_constraintLeft_toRightOf="@+id/approveShareParkInfoPriceContentTxt"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/approveShareParkInfoShareTimeTxt"
+                android:textSize="18sp"
+                android:text="공유 시간"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoPriceContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoShareTimeContentTxt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoShareTimeTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoUpTimeTxt"
+                android:textSize="18sp"
+                android:text="공유 올린 시각"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoShareTimeContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/approveShareParkInfoUpTimeContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/approveShareParkInfoUpTimeTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/approveBtn"
+        android:src="@drawable/gradate_button"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rejectionBtn"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:text="승인"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/approveBtn"
+        app:layout_constraintEnd_toEndOf="@+id/approveBtn"
+        app:layout_constraintStart_toStartOf="@+id/approveBtn"
+        app:layout_constraintTop_toTopOf="@+id/approveBtn" />
+
+    <ImageButton
+        android:id="@+id/rejectionBtn"
+        android:src="@drawable/gradate_cancel_button"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:text="거부"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/rejectionBtn"
+        app:layout_constraintEnd_toEndOf="@+id/rejectionBtn"
+        app:layout_constraintStart_toStartOf="@+id/rejectionBtn"
+        app:layout_constraintTop_toTopOf="@+id/rejectionBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bt_main"
+        android:enabled="true"
+        android:icon="@drawable/main_icon_cut"
+        android:title="메인화면" />
+    <item
+        android:id="@+id/bt_mybook"
+        android:enabled="true"
+        android:icon="@drawable/mybook"
+        android:title="내 예약" />
+    <item
+        android:id="@+id/bt_my_shared_park"
+        android:enabled="true"
+        android:icon="@drawable/shared_park"
+        android:title="내 공유주차장" />
+    <item
+        android:id="@+id/bt_my_discount_park_report"
+        android:enabled="true"
+        android:icon="@drawable/discount_park_icon"
+        android:title="내 제보" />
+    <item
+        android:id="@+id/bt_point"
+        android:enabled="true"
+        android:icon="@drawable/point"
+        android:title="포인트기록" />
+</menu>

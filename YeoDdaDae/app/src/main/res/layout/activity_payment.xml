@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+    <ImageButton
+        android:id="@+id/paymentBackBtn"
+        android:src="@drawable/back_icon"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:text="결제"
+        android:textSize="25sp"
+        android:textColor="@color/sub"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/paymentBackBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentBackBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPayBtn"
+        app:layout_constraintTop_toBottomOf="@+id/paymentBackBtn"
+        android:layout_marginTop="10dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/paymentYdPointTxt"
+                android:text="보유 여따대포인트"
+                android:textSize="35sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/paymentYdPointContentTxt"
+                android:text="0"
+                android:textColor="@color/sub"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/paymentYdPointTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:text="pt"
+                android:textColor="@color/sub"
+                android:textSize="40sp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/paymentYdPointContentTxt"
+                app:layout_constraintLeft_toRightOf="@id/paymentYdPointContentTxt"
+                app:layout_constraintTop_toTopOf="@id/paymentYdPointContentTxt"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/paymentTotalPriceTxt"
+                android:text="가격"
+                android:textSize="35sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/paymentYdPointContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/paymentTotalPriceContentTxt"
+                android:text="0"
+                android:textSize="40sp"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/paymentTotalPriceTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="pt"
+                android:textColor="@color/red"
+                android:textSize="40sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="@+id/paymentTotalPriceContentTxt"
+                app:layout_constraintLeft_toRightOf="@+id/paymentTotalPriceContentTxt"
+                app:layout_constraintTop_toTopOf="@+id/paymentTotalPriceContentTxt" />
+
+            <TextView
+                android:id="@+id/paymentAfterPayPointTxt"
+                android:text="결제 후 남을 여따대포인트"
+                android:textSize="34sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/paymentTotalPriceContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/paymentAfterPayPointContentTxt"
+                android:text="0"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/paymentAfterPayPointTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/paymentAfterPayPointPtTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="pt"
+                android:textSize="40sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="@+id/paymentAfterPayPointContentTxt"
+                app:layout_constraintLeft_toRightOf="@+id/paymentAfterPayPointContentTxt"
+                app:layout_constraintTop_toTopOf="@+id/paymentAfterPayPointContentTxt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/paymentPayBtn"
+        android:src="@drawable/gradate_button"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:text="결제"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/paymentPayBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentPayBtn"
+        app:layout_constraintLeft_toLeftOf="@+id/paymentPayBtn"
+        app:layout_constraintRight_toRightOf="@+id/paymentPayBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

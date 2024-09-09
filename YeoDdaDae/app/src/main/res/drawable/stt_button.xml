@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#522bff"
+                android:endColor="#b259ff"
+                android:angle="315"/> <!-- 그라데이션 각도 설정 -->
+            <corners android:radius="32dp"/> <!-- 모서리 둥글기 설정 -->
+        </shape>
+    </item>
+</layer-list>

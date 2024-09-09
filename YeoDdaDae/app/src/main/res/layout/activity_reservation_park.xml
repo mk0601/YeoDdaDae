@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservationParkActivity">
+
+    <ImageButton
+        android:id="@+id/reservationBackBtn"
+        android:src="@drawable/back_icon"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:text="공유주차장 예약"
+        android:textSize="25sp"
+        android:textColor="@color/sub"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/reservationBackBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/reservationBackBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/reservationBackBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" >
+
+            <TextView
+                android:id="@+id/reservationParkAddressTxt"
+                android:text="주차장 주소"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkNewAddressContentTxt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkAddressTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkOldAddressContentTxt"
+                android:textSize="18sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkNewAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkDetailAddressTxt"
+                android:textSize="18sp"
+                android:text="주차장 상세주소"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkOldAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkDetailAddressContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkDetailAddressTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerNameTxt"
+                android:textSize="18sp"
+                android:text="공유자명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkDetailAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerNameContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerNameTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerPhoneTxt"
+                android:textSize="18sp"
+                android:text="공유자 전화번호"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerNameContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerPhoneContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerPhoneTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerEmailTxt"
+                android:textSize="18sp"
+                android:text="공유자 이메일"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerPhoneContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerEmailContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerEmailTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerRelationTxt"
+                android:text="공유자의 주차장과의 관계"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerEmailContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationSharerRelationContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerRelationTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkPriceTxt"
+                android:text="주차장 가격"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationSharerRelationContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkPricePerHour"
+                android:text="시간 당"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/reservationPriceContentTxt"
+                app:layout_constraintBottom_toBottomOf="@id/reservationPriceContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationPriceContentTxt"
+                android:text="0"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkPriceTxt"
+                app:layout_constraintLeft_toRightOf="@+id/reservationParkPricePerHour"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/reservationParkPtTxt"
+                android:text="pt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/reservationPriceContentTxt"
+                app:layout_constraintBottom_toBottomOf="@id/reservationPriceContentTxt"
+                app:layout_constraintLeft_toRightOf="@id/reservationPriceContentTxt"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/reservationShareTimeTxt"
+                android:text="공유 시간"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationPriceContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationShareTimeContentTxt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationShareTimeTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationedTimeTxt"
+                android:text="다른 예약된 시간"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationShareTimeContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationedTimeContentTxt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/reservationedTimeTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationParkDateTxt"
+                android:text="예약 시간"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationedTimeContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <ImageButton
+                android:id="@+id/resetBtn"
+                android:src="@drawable/reset_icon"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/reservationParkDateTxt"
+                app:layout_constraintStart_toEndOf="@+id/reservationParkDateTxt"
+                android:layout_marginLeft="10dp" />
+
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/reservationParkDateCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/resetBtn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:mcv_selectionMode="multiple"
+                app:mcv_firstDayOfWeek="monday"
+                app:mcv_showOtherDates="all"
+                app:mcv_selectionColor="@color/sub"
+                android:layout_marginTop="5dp"/>
+
+            <ListView
+                android:id="@+id/reservationParkTimeListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/reservationParkDateCalendar"
+                app:layout_constraintLeft_toLeftOf="parent">
+            </ListView>
+
+            <TextView
+                android:id="@+id/reservationTotalPriceTxt"
+                android:text="총 금액"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/reservationParkTimeListView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationTotalPriceContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/reservationTotalPriceTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reservationWonTxt"
+                android:text="pt"
+                android:textSize="15sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/reservationTotalPriceContentTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/reservationTotalPriceContentTxt"
+                app:layout_constraintLeft_toRightOf="@+id/reservationTotalPriceContentTxt"
+                android:layout_marginLeft="5dp"/>
+
+            <ImageButton
+                android:id="@+id/reservationBtn"
+                android:src="@drawable/gradate_button"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toBottomOf="@id/reservationTotalPriceContentTxt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:text="결제하기"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/reservationBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/reservationBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/reservationBtn"
+                app:layout_constraintRight_toRightOf="@+id/reservationBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

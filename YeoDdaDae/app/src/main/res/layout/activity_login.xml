@@ -1,57 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/loginBackBtn"
-        android:text="back"
-        android:textSize="20dp"
+        android:src="@drawable/back_icon"
+        android:scaleType="fitCenter"
+        android:background="@drawable/bg_widget_transparent_left"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <ImageView
+        android:id="@+id/login_mainicon"
+        android:src="@drawable/main_icon_cutted_gradated"
+        android:adjustViewBounds="true"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/loginTxt"
+        android:text="로그인"
+        android:textSize="25sp"
+        android:textColor="@color/sub"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/login_mainicon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp" />
+
+    <ImageView
+        android:id="@+id/userFace"
+        android:src="@drawable/userface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginTxt"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/loginIdTxt"
-        android:maxLength="30"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
+        android:hint="아이디"
+        android:textSize="25sp"
+        android:textColorHint="@color/main"
+        android:backgroundTint="@color/sub"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userFace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
     <EditText
         android:id="@+id/loginPwTxt"
-        android:maxLength="30"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:textSize="25sp"
+        android:textColorHint="@color/main"
+        android:backgroundTint="@color/sub"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/loginIdTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginIdTxt" />
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/loginBtn"
-        android:text="로그인"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/gradate_button"
+        app:layout_constraintTop_toBottomOf="@id/loginPwTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginPwTxt" />
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp" />
 
-    <Button
-        android:id="@+id/toRegisterBtn"
-        android:text="회원가입"
-        android:textSize="20dp"
+    <TextView
+        android:id="@+id/loginBtnTxt"
+        android:text="로그인"
+        android:textSize="25sp"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+        app:layout_constraintStart_toStartOf="@+id/loginBtn"
+        app:layout_constraintTop_toTopOf="@+id/loginBtn" />
+
+    <ImageButton
+        android:id="@+id/toRegisterBtn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/gradate_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginBtn" />
+        app:layout_constraintTop_toBottomOf="@id/loginBtn"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"/>
+
+    <TextView
+        android:text="회원가입"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/toRegisterBtn"
+        app:layout_constraintEnd_toEndOf="@+id/toRegisterBtn"
+        app:layout_constraintStart_toStartOf="@+id/toRegisterBtn"
+        app:layout_constraintTop_toTopOf="@+id/toRegisterBtn" />
+
+    <TextView
+        android:id="@+id/toChangePasswordTxt"
+        android:text="비밀번호를 잊으셨나요?"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="50dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

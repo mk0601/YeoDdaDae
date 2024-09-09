@@ -1,3 +1,80 @@
 <resources>
-    <string name="app_name">YeoDdaDae</string>
+    <string name="app_name">여따대</string>
+    <string name="new_start">주차의 새로운 시작</string>
+    <string name="already_user">가입된 회원이십니까?</string>
+    <string name="login">로그인</string>
+    <string name="membership">회원이 아니십니까?</string>
+    <string name="join_membership1">회원가입</string>
+    <string name="join_membership2">회원가입</string>
+    <string name="id1">아이디</string>
+    <string name="pw1">비밀번호</string>
+    <string name="pw_check">비밀번호 확인</string>
+    <string name="email1">이메일</string>
+    <string name="all_agree">약관 전체 동의</string>
+    <string name="personal_information">개인정보 수집 동의(필수)</string>
+    <string name="read">읽어보기</string>
+    <string name="ad_agree">광고 이용 동의(선택)</string>
+    <string name="login2">로그인</string>
+    <string name="info_change">회원정보수정</string>
+    <string name="find_parkin">주차장 찾아가기\n Find parking lot</string>
+    <string name="find_gas_st">주유소 찾아가기\n Find gas station</string>
+    <string name="shared_park">공유주차장 등록\n Shared parking</string>
+    <string name="discount_park_report">할인주차장 제보\n Discount park report</string>
+    <string name="mybooking">나의 예약</string>
+    <string name="ticket">정기권구매</string>
+    <string name="car_register">주차장등록</string>
+    <string name="info">서비스안내</string>
+    <string name="customer_service">고객센터</string>
+    <string name="mybooking2">나의예약</string>
+    <string name="ticket2">정기권 구매</string>
+    <string name="mybookcheck">예약 자세히 보기</string>
+    <string name="info2">서비스안내</string>
+    <string name="info_listitem">안내사항 및 안내질문 게시글</string>
+    <string name="customer_service2">고객센터</string>
+    <string name="manager_info1">관리자 정보</string>
+    <string name="manager_info2">성명\n\n나이\n\n사업연혁</string>
+
+    <string-array name="custom_weekdays">
+        <item>월</item>
+        <item>화</item>
+        <item>수</item>
+        <item>목</item>
+        <item>금</item>
+        <item>토</item>
+        <item>일</item>
+    </string-array>
+
+    <string-array name="my_spinner_distance_items">
+        <item>무제한</item>
+        <item>5Km</item>
+        <item>3Km</item>
+        <item>1Km</item>
+    </string-array>
+
+    <string-array name="my_spinner_point_history_items">
+        <item>전체</item>
+        <item>증가만</item>
+        <item>감소만</item>
+        <item>기간 직접 설정</item>
+    </string-array>
+
+    <string-array name="my_spinner_charge_point_items">
+        <item>1,000pt</item>
+        <item>5,000pt</item>
+        <item>10,000pt</item>
+        <item>30,000pt</item>
+        <item>50,000pt</item>
+        <item>100,000pt</item>
+    </string-array>
+
+    <string-array name="my_spinner_time_items">
+        <item>오늘</item>
+        <item>이번 주</item>
+        <item>이번 달</item>
+        <item>올해</item>
+        <item>직접 설정</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

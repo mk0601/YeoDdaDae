@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="CoarseFineLocation">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,9 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YeoDdaDae"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,15 +25,49 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity"/>
-        <activity android:name=".RegisterAccount"/>
-        <activity android:name=".SttActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".ChangePasswordActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".YdPointChargeActivity"/>
+        <activity android:name=".YdPointRefundActivity"/>
+        <activity android:name=".FindParkActivity"/>
+        <activity android:name=".ReservationInformationActivity"/>
+        <activity android:name=".ReservationParkActivity"/>
+        <activity android:name=".PaymentActivity"/>
+        <activity android:name=".FindGasStationActivity"/>
+        <activity android:name=".MyShareParkInformationActivity"/>
+        <activity android:name=".ShareParkActivity"/>
+        <activity android:name=".GpsCertificationActivity"/>
+        <activity android:name=".AddReportDiscountParkActivity"/>
+        <activity android:name=".ReportDiscountParkInformationActivity"/>
+        <activity android:name=".AnotherReportDiscountParkActivity"/>
+        <activity android:name=".RateAnotherReportDiscountParkActivity"/>
+        <activity android:name=".AdminMainActivity"/>
+        <activity android:name=".ApproveShareParkActivity"/>
+        <activity android:name=".ApproveShareParkInformationActivity"/>
+        <activity android:name=".ApproveReportActivity"/>
+        <activity android:name=".ApproveReportInformationActivity"/>
+        <activity android:name=".StatisticsActivity"/>
+        <service
+            android:name=".SttService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <queries>
         <intent>
             <action android:name="android.speech.RecognitionService" />
         </intent>
+
+        <package android:name="com.skt.skaf.l001mtm091"/>
+        <package android:name="com.skt.tmap.ku"/>
     </queries>
 
 </manifest>

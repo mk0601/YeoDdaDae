@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bt_myaccount"
+        android:title="회원정보" />
+    <item
+        android:id="@+id/bt_Mileage"
+        android:title="마일리지" />
+</menu>

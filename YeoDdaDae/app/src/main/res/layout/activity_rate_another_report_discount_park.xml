@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RateAnotherReportDiscountParkActivity">
+
+    <ImageButton
+        android:id="@+id/reportInfoBackBtn"
+        android:src="@drawable/back_icon"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:text="제보주차장 평가"
+        android:textSize="25sp"
+        android:textColor="@color/sub"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/reportInfoBackBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/reportInfoBackBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/reportInfoBackBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/rateReportIdTxt"
+                android:text="제보 번호"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportIdContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportIdTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportParkNameTxt"
+                android:textSize="18sp"
+                android:text="주차장 이름"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportIdContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportParkNameContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportParkNameTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportParkAddressTxt"
+                android:textSize="18sp"
+                android:text="주차장 주소"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportParkNameContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportParkNewAddressContentTxt"
+                android:textSize="20sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportParkAddressTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportParkOldAddressContentTxt"
+                android:textSize="18sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportParkNewAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportConditionTxt"
+                android:textSize="18sp"
+                android:text="조건"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportParkOldAddressContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportConditionContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportConditionTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportDiscountTxt"
+                android:text="혜택"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportConditionContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportDiscountContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportDiscountTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportWonTxt"
+                android:text="원 할인"
+                android:textSize="15sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/rateReportDiscountContentTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/rateReportDiscountContentTxt"
+                app:layout_constraintLeft_toRightOf="@+id/rateReportDiscountContentTxt"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/rateReportUpTimeTxt"
+                android:textSize="18sp"
+                android:text="제보 시각"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportDiscountContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/rateReportUpTimeContentTxt"
+                android:textSize="25sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/rateReportUpTimeTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <ImageButton
+                android:id="@+id/rateReportPerfectBtn"
+                android:src="@drawable/disabled_button"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportUpTimeContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/perfectTxt"
+                android:text="0"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/rateReportPerfectBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/rateReportPerfectBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/rateReportPerfectBtn"
+                app:layout_constraintRight_toRightOf="@+id/rateReportPerfectBtn" />
+
+            <ImageButton
+                android:id="@+id/rateReportMistakeBtn"
+                android:src="@drawable/disabled_button"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportUpTimeContentTxt"
+                app:layout_constraintLeft_toRightOf="@+id/rateReportPerfectBtn"
+                app:layout_constraintRight_toLeftOf="@+id/rateReportWrongBtn"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:id="@+id/mistakeTxt"
+                android:text="0"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/rateReportMistakeBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/rateReportMistakeBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/rateReportMistakeBtn"
+                app:layout_constraintRight_toRightOf="@+id/rateReportMistakeBtn" />
+
+            <ImageButton
+                android:id="@+id/rateReportWrongBtn"
+                android:src="@drawable/disabled_button"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportUpTimeContentTxt"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/wrongTxt"
+                android:text="0"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/rateReportWrongBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/rateReportWrongBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/rateReportWrongBtn"
+                app:layout_constraintRight_toRightOf="@+id/rateReportWrongBtn" />
+
+            <TextView
+                android:text="완벽해요"
+                android:textSize="18sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportPerfectBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/rateReportPerfectBtn"
+                app:layout_constraintRight_toRightOf="@+id/rateReportPerfectBtn" />
+
+            <TextView
+                android:text="틀린 부분이 있어요"
+                android:textSize="16sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportMistakeBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/rateReportMistakeBtn"
+                app:layout_constraintRight_toRightOf="@+id/rateReportMistakeBtn" />
+
+            <TextView
+                android:text="완전히 틀렸어요"
+                android:textSize="16sp"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/rateReportWrongBtn"
+                app:layout_constraintLeft_toLeftOf="@+id/rateReportWrongBtn"
+                app:layout_constraintRight_toRightOf="@+id/rateReportWrongBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

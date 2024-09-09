@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/gradate_list_view_item"
+    android:id="@+id/gasStationItemConstraintLayout">
+
+    <TextView
+        android:id="@+id/gasStationOrder"
+        android:text="0"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/gasStationName"
+        android:text="주유소명"
+        android:textSize="18dp"
+        android:textColor="#FFFFFF"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/gasStationOrder"
+        app:layout_constraintBottom_toBottomOf="@+id/gasStationOrder"
+        app:layout_constraintLeft_toRightOf="@+id/gasStationOrder"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/gasStationPhone"
+        android:text="000-0000-0000"
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/gasStationName"
+        app:layout_constraintRight_toRightOf="@+id/gasStationName"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/gasStationDistance"
+        android:text="0km"
+        android:textSize="18dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:id="@+id/gasStationBrand"
+        android:text="브랜드"
+        android:textSize="18dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/gasStationDistance"
+        app:layout_constraintRight_toLeftOf="@+id/gasStationDistance"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:id="@+id/gasStationOilPrice"
+        android:text="유가"
+        android:textSize="16dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

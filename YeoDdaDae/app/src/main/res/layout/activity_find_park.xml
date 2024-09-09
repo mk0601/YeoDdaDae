@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindParkActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTmap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ListView
+                android:id="@+id/parkListView"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <HorizontalScrollView
+                android:id="@+id/parkSortHorizontalScrollView"
+                android:scrollbars="none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/parkListView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageButton
+                            android:id="@+id/sortByDistanceBtn"
+                            android:src="@drawable/gradate_button"
+                            android:background="@android:color/transparent"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent" />
+
+                        <TextView
+                            android:text="거리순"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@+id/sortByDistanceBtn"
+                            app:layout_constraintBottom_toBottomOf="@+id/sortByDistanceBtn"
+                            app:layout_constraintLeft_toLeftOf="@+id/sortByDistanceBtn"
+                            app:layout_constraintRight_toRightOf="@+id/sortByDistanceBtn"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp" >
+
+                        <ImageButton
+                            android:id="@+id/sortByParkPriceBtn"
+                            android:src="@drawable/gradate_button"
+                            android:background="@android:color/transparent"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent" />
+
+                        <TextView
+                            android:text="주차비순"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@+id/sortByParkPriceBtn"
+                            app:layout_constraintBottom_toBottomOf="@+id/sortByParkPriceBtn"
+                            app:layout_constraintLeft_toLeftOf="@+id/sortByParkPriceBtn"
+                            app:layout_constraintRight_toRightOf="@+id/sortByParkPriceBtn"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/naviConstLayout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/parkSortHorizontalScrollView"
+                android:layout_marginTop="5dp">
+
+                <ImageButton
+                    android:id="@+id/cancelNaviBtn"
+                    android:background="@drawable/gradate_button"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:text="뒤로가기"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/cancelNaviBtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancelNaviBtn"
+                    app:layout_constraintLeft_toLeftOf="@+id/cancelNaviBtn"
+                    app:layout_constraintRight_toRightOf="@+id/cancelNaviBtn" />
+
+                <ImageButton
+                    android:id="@+id/toReservationBtn"
+                    android:background="@drawable/gradate_button"
+                    android:visibility="gone"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/cancelNaviBtn"
+                    app:layout_constraintRight_toLeftOf="@+id/toStartNaviBtn" />
+
+                <TextView
+                    android:text="예약하기"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/toReservationBtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/toReservationBtn"
+                    app:layout_constraintLeft_toLeftOf="@+id/toReservationBtn"
+                    app:layout_constraintRight_toRightOf="@+id/toReservationBtn" />
+
+                <ImageButton
+                    android:id="@+id/toStartNaviBtn"
+                    android:background="@drawable/gradate_button"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <TextView
+                    android:text="네비게이션 시작"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/toStartNaviBtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/toStartNaviBtn"
+                    app:layout_constraintLeft_toLeftOf="@+id/toStartNaviBtn"
+                    app:layout_constraintRight_toRightOf="@+id/toStartNaviBtn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:id="@+id/searchStartBtn"
+                android:src="@drawable/search_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toBottomOf="@id/naviConstLayout"
+                app:layout_constraintLeft_toLeftOf="@id/parkSortHorizontalScrollView"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left" >
+
+            <ImageButton
+                android:id="@+id/zoomOutBtn"
+                android:src="@drawable/minus_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageButton
+                android:id="@+id/zoomInBtn"
+                android:src="@drawable/plus_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@id/zoomOutBtn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageButton
+                android:id="@+id/gpsBtn"
+                android:src="@drawable/gps_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@id/zoomInBtn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="20dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tempId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right" >
+
+            <ImageButton
+                android:id="@+id/findParkBackBtn"
+                android:src="@drawable/back_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp" />
+
+            <ImageButton
+                android:id="@+id/findParkSttBtn"
+                android:src="@drawable/stt_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/findParkBackBtn"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="5dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/onlyConstLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/findParkSttBtn"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="30dp" >
+
+                <ImageButton
+                    android:id="@+id/findParkOnlyReportParkBtn"
+                    android:src="@drawable/gradate_button"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <TextView
+                    android:text="제보만"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/findParkOnlyReportParkBtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/findParkOnlyReportParkBtn"
+                    app:layout_constraintLeft_toLeftOf="@+id/findParkOnlyReportParkBtn"
+                    app:layout_constraintRight_toRightOf="@+id/findParkOnlyReportParkBtn" />
+
+                <ImageButton
+                    android:id="@+id/findParkOnlyShareParkBtn"
+                    android:src="@drawable/gradate_button"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/findParkOnlyReportParkBtn"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:text="공유만"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/findParkOnlyShareParkBtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/findParkOnlyShareParkBtn"
+                    app:layout_constraintLeft_toLeftOf="@+id/findParkOnlyShareParkBtn"
+                    app:layout_constraintRight_toRightOf="@+id/findParkOnlyShareParkBtn" />
+
+                <ImageButton
+                    android:id="@+id/findParkTimeSetBtn"
+                    android:src="@drawable/clock_icon"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:visibility="gone"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/findParkOnlyShareParkBtn"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginBottom="2dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@android:color/white" >
+
+            <EditText
+                android:id="@+id/searchEdTxt"
+                android:hint="검색..."
+                android:textSize="25sp"
+                android:backgroundTint="@color/sub"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/searchBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/searchBtn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/searchBtn"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp" />
+
+            <ImageButton
+                android:id="@+id/searchBtn"
+                android:src="@drawable/search_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toTopOf="@+id/searchBackBtn"
+                app:layout_constraintRight_toLeftOf="@+id/searchBackBtn"
+                android:layout_marginRight="5dp"/>
+
+            <ImageButton
+                android:id="@+id/searchBackBtn"
+                android:src="@drawable/back_icon"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <ListView
+                android:id="@+id/searchListView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/searchEdTxt"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/searchNoTxt"
+                android:text="없음"
+                android:textSize="30sp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/searchListView"
+                app:layout_constraintBottom_toBottomOf="@+id/searchListView"
+                app:layout_constraintLeft_toLeftOf="@+id/searchListView"
+                app:layout_constraintRight_toRightOf="@+id/searchListView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/findParkCustomTimeConstLayout"
+                android:visibility="gone"
+                android:background="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" >
+
+                <TextView
+                    android:id="@+id/findParkCustomTimeStartTxt"
+                    android:text="시작"
+                    android:textSize="20dp"
+                    android:textColor="@color/sub"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="10dp"/>
+
+                <EditText
+                    android:id="@+id/findParkCustomTimeStartDateEditTxt"
+                    android:textSize="16dp"
+                    android:textColor="@color/sub"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/findParkCustomTimeEndDateEditTxt"
+                    app:layout_constraintLeft_toRightOf="@+id/findParkCustomTimeStartTxt"
+                    app:layout_constraintRight_toLeftOf="@+id/findParkCustomTimeStartTimeEditTxt"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:id="@+id/findParkCustomTimeStartTimeEditTxt"
+                    android:textSize="16dp"
+                    android:textColor="@color/sub"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintLeft_toRightOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/findParkCustomTimeEndTxt"
+                    android:text="끝"
+                    android:textSize="20dp"
+                    android:textColor="@color/sub"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/findParkCustomTimeEndDateEditTxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/findParkCustomTimeEndDateEditTxt"
+                    app:layout_constraintLeft_toLeftOf="@+id/findParkCustomTimeStartTxt"
+                    app:layout_constraintRight_toRightOf="@+id/findParkCustomTimeStartTxt" />
+
+                <EditText
+                    android:id="@+id/findParkCustomTimeEndDateEditTxt"
+                    android:textSize="16dp"
+                    android:textColor="@color/sub"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    app:layout_constraintRight_toRightOf="@+id/findParkCustomTimeStartDateEditTxt"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <EditText
+                    android:id="@+id/findParkCustomTimeEndTimeEditTxt"
+                    android:textSize="16dp"
+                    android:textColor="@color/sub"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/findParkCustomTimeEndDateEditTxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/findParkCustomTimeEndDateEditTxt"
+                    app:layout_constraintLeft_toLeftOf="@+id/findParkCustomTimeStartTimeEditTxt"
+                    app:layout_constraintRight_toRightOf="@+id/findParkCustomTimeStartTimeEditTxt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

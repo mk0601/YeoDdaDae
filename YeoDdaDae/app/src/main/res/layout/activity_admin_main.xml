@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminMainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/mainicon"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/main_icon_cutted_gradated"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/newparking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/new_start"
+            android:textColor="@color/sub"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainicon" />
+
+        <ImageButton
+            android:id="@+id/menubarBtn"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/hamburger_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp" />
+
+        <ImageButton
+            android:id="@+id/toApproveShareParkBtn"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gradate_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newparking" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/approve_share_park_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/toApproveShareParkBtn"
+            app:layout_constraintLeft_toLeftOf="@+id/toApproveShareParkBtn"
+            app:layout_constraintTop_toTopOf="@+id/toApproveShareParkBtn" />
+
+        <TextView
+            android:id="@+id/toApproveShareParkTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="공유주차장 승인"
+            android:textAppearance="@style/sharedpark_approval"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="@+id/toApproveShareParkBtn"
+            app:layout_constraintTop_toTopOf="@+id/toApproveShareParkBtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="공유주차장 신청 승인하기"
+            android:textAppearance="@style/sharedpark_approval_sub"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/toApproveShareParkBtn"
+            app:layout_constraintRight_toRightOf="@+id/toApproveShareParkTxt" />
+
+        <TextView
+            android:id="@+id/toApproveShareParkNotificationTxt"
+            android:text="0"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/gradate_notification"
+            app:layout_constraintTop_toTopOf="@+id/toApproveShareParkTxt"
+            app:layout_constraintBottom_toBottomOf="@+id/toApproveShareParkTxt"
+            app:layout_constraintRight_toLeftOf="@+id/toApproveShareParkTxt" />
+
+        <ImageButton
+            android:id="@+id/toApproveReportBtn"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gradate_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toApproveShareParkBtn" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/approve_report_park_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/toApproveReportBtn"
+            app:layout_constraintLeft_toLeftOf="@+id/toApproveReportBtn"
+            app:layout_constraintTop_toTopOf="@+id/toApproveReportBtn" />
+
+        <TextView
+            android:id="@+id/toApproveReportTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="할인주차장 제보 승인"
+            android:textAppearance="@style/DC_approval_report"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="@+id/toApproveReportBtn"
+            app:layout_constraintTop_toTopOf="@+id/toApproveReportBtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="무료/할인주차장 제보 승인하기"
+            android:textAppearance="@style/DC_approval_report_sub"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/toApproveReportBtn"
+            app:layout_constraintRight_toRightOf="@+id/toApproveReportTxt" />
+
+        <TextView
+            android:id="@+id/toApproveReportNotificationTxt"
+            android:text="0"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/gradate_notification"
+            app:layout_constraintTop_toTopOf="@+id/toApproveReportTxt"
+            app:layout_constraintBottom_toBottomOf="@+id/toApproveReportTxt"
+            app:layout_constraintRight_toLeftOf="@+id/toApproveReportTxt" />
+
+        <ImageButton
+            android:id="@+id/toStatisticsBtn"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gradate_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toApproveReportBtn" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/statics_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/toStatisticsBtn"
+            app:layout_constraintLeft_toLeftOf="@+id/toStatisticsBtn"
+            app:layout_constraintTop_toTopOf="@+id/toStatisticsBtn" />
+
+        <TextView
+            android:id="@+id/toStatisticsTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="통계"
+            android:textAppearance="@style/statics"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="@+id/toStatisticsBtn"
+            app:layout_constraintTop_toTopOf="@+id/toStatisticsBtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="기간별 통계 확인하기"
+            android:textAppearance="@style/statics_sub"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/toStatisticsBtn"
+            app:layout_constraintRight_toRightOf="@+id/toStatisticsTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="관리자 모드입니다"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

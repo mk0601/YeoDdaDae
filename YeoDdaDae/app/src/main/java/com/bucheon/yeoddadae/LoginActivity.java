@@ -1,26 +1,48 @@
 package com.bucheon.yeoddadae;
 
+import static android.content.ContentValues.TAG;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginActivity extends AppCompatActivity {
+    boolean isLogining = false;
+    FirebaseAuth mAuth;
+
+    ImageButton backBtn;
+    EditText idTxt;
+    EditText pwTxt;
+    ImageButton loginBtn;
+    ImageButton registerBtn;
+    TextView toChangePasswordTxt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        FirestoreDatabase fd = new FirestoreDatabase();
+        backBtn = findViewById(R.id.loginBackBtn);
+        idTxt = findViewById(R.id.loginIdTxt);
+        pwTxt = findViewById(R.id.loginPwTxt);
+        loginBtn = findViewById(R.id.loginBtn);
+        registerBtn = findViewById(R.id.toRegisterBtn);
+        toChangePasswordTxt = findViewById(R.id.toChangePasswordTxt);
 
-        Button backBtn = (Button) findViewById(R.id.loginBackBtn);
-        EditText idTxt = (EditText) findViewById(R.id.loginIdTxt);
-        EditText pwTxt = (EditText) findViewById(R.id.loginPwTxt);
-        Button loginBtn = (Button) findViewById(R.id.loginBtn);
-        Button registerBtn = (Button) findViewById(R.id.toRegisterBtn);
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.signOut();
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,32 +51,100 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        pwTxt.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    loginBtn.callOnClick();
+                }
+
+                return false;
+            }
+        });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
-                String id = idTxt.getText().toString();
-                String pw = pwTxt.getText().toString();
-
-                if (id.length() <= 5) {
+                if (isLogining) {
                     return;
                 }
-                else if (pw.length() <= 5) {
-                    return;
+
+                isLogining = true;
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(idTxt.getWindowToken(), 0);
+                    imm.hideSoftInputFromWindow(pwTxt.getWindowToken(), 0);
+                }
+
+                String id = replaceNewlinesAndTrim(idTxt);
+                String pw = replaceNewlinesAndTrim(pwTxt);
+
+                if (id.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "ID를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    isLogining = false;
+                }
+                else if (pw.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show();
+                    isLogining = false;
+                }
+                else if (id.contains(" ")) {
+                    Toast.makeText(getApplicationContext(), "ID는 공백을 포함할 수 없습니다", Toast.LENGTH_SHORT).show();
+                    isLogining = false;
+                }
+                else if (pw.contains(" ")) {
+                    Toast.makeText(getApplicationContext(), "비밀번호는 공백을 포함할 수 없습니다", Toast.LENGTH_SHORT).show();
+                    isLogining = false;
+                }
+                else if (id.length() <= 5 || id.length() >= 21) {
+                    Toast.makeText(getApplicationContext(), "ID는 6~20자 입니다", Toast.LENGTH_SHORT).show();
+                    isLogining = false;
+                }
+                else if (pw.length() <= 5 || pw.length() >= 21) {
+                    Toast.makeText(getApplicationContext(), "비밀번호는 6~20자 입니다", Toast.LENGTH_SHORT).show();
+                    isLogining = false;
                 }
                 else {
-                    fd.login(id, pw, new OnFirestoreDataLoadedListener() {
+                    FirestoreDatabase fd = new FirestoreDatabase();
+
+                    fd.findEmailAndIsAdminById(id, new OnFirestoreDataLoadedListener() {
                         @Override
-                        public void onDataLoaded(Object isAdmin) {
-                            Intent resultIntent = new Intent();
-                            resultIntent.putExtra("loginId", id);
-                            resultIntent.putExtra("isAdmin", (Boolean) isAdmin);
-                            setResult(RESULT_OK, resultIntent);
-                            finish();
+                        public void onDataLoaded(Object data) {
+                            String email = ((String[]) data)[0];
+                            boolean isAdmin = Boolean.parseBoolean(((String[]) data)[1]);
+
+                            mAuth.signInWithEmailAndPassword(email, pw)
+                                    .addOnCompleteListener(task -> {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+                                            App app = (App) getApplication();
+                                            app.setLoginId(id);
+                                            Intent resultIntent = new Intent();
+                                            resultIntent.putExtra("loginId", id);
+                                            resultIntent.putExtra("isAdmin", isAdmin);
+                                            setResult(RESULT_OK, resultIntent);
+                                            isLogining = false;
+                                            finish();
+                                        }
+                                        else {
+                                            Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
+                                            isLogining = false;
+                                            pwTxt.setText("");
+                                        }
+                                    });
                         }
 
                         @Override
                         public void onDataLoadError(String errorMessage) {
-                            // Handle login failure
+                            Log.d(TAG, errorMessage);
+                            if (errorMessage.equals("계정이 없음")) {
+                                Toast.makeText(getApplicationContext(), "해당 아이디의 계정이 없습니다", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "오류 발생", Toast.LENGTH_SHORT).show();
+                            }
+                            pwTxt.setText("");
+                            isLogining = false;
                         }
                     });
                 }
@@ -64,9 +154,21 @@ public class LoginActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(getApplicationContext(), RegisterAccount.class);
+                Intent registerIntent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(registerIntent);
             }
         });
+
+        toChangePasswordTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent changePwIntent = new Intent(getApplicationContext(), ChangePasswordActivity.class);
+                startActivity(changePwIntent);
+            }
+        });
+    }
+
+    String replaceNewlinesAndTrim(EditText et) {
+        return et.getText().toString().replaceAll("\\n", " ").trim();
     }
 }

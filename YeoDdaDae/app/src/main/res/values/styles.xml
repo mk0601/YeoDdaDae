@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="maincolorText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#9DE3F9</item>
+    </style>
+
+    <style name="subcolorText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <!-- styles.xml -->
+    <style name="new_start">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#9DE3F9</item>
+        <!-- Add other style attributes as needed -->
+    </style>
+    <style name="already_user">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="new_button_style" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/blue</item>
+        <!-- 다른 원하는 스타일 속성들을 추가할 수 있습니다. -->
+    </style>
+    <style name="membership">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="join_membership1">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="join_membership2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="id1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="pw1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="pw_check">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="email1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="all_agree">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="personal_information">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="read">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="ad_agree">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="login2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="info_change">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="find_parkin">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="find_parkin_sub">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="find_gas_st">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="find_gas_st_sub">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="discount_park_report">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="discount_park_report_sub">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="microphone">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="mybooking">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="ticket">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="car_register">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="info">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="customer_service">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#0000FF</item>
+    </style>
+    <style name="btn_login">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="mybooking2">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="ticket2">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="mybookcheck">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="info2">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="info_listitem">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="customer_service2">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="manager_info1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#1FB4F1</item>
+    </style>
+    <style name="manager_info2">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="sharedpark_approval">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="sharedpark_approval_sub">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="DC_approval_report">
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="DC_approval_report_sub">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="statics">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="statics_sub">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

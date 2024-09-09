@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YdPointRefundActivity">
+
+    <ImageButton
+        android:id="@+id/refundBackBtn"
+        android:src="@drawable/back_icon"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:text="여따대포인트 환급"
+        android:textSize="25sp"
+        android:textColor="@color/sub"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/refundBackBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/refundBackBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/refundBtn"
+        app:layout_constraintTop_toBottomOf="@+id/refundBackBtn"
+        android:layout_marginTop="10dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/refundHavePointTxt"
+                android:text="보유 여따대포인트"
+                android:textSize="35sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/refundHavePointContentTxt"
+                android:text="0"
+                android:textColor="@color/sub"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/refundHavePointTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:text="pt"
+                android:textColor="@color/sub"
+                android:textSize="40sp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/refundHavePointContentTxt"
+                app:layout_constraintLeft_toRightOf="@id/refundHavePointContentTxt"
+                app:layout_constraintTop_toTopOf="@id/refundHavePointContentTxt"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/refundTargetPointTxt"
+                android:text="환급할 포인트"
+                android:textSize="40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/refundHavePointContentTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:id="@+id/refundTargetPointContentEditTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/sub"
+                app:layout_constraintTop_toBottomOf="@+id/refundTargetPointTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/refundPtTxt"
+                android:text="pt"
+                android:textSize="40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/sub"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="@+id/refundTargetPointContentEditTxt"
+                app:layout_constraintLeft_toRightOf="@id/refundTargetPointContentEditTxt"
+                app:layout_constraintTop_toTopOf="@id/refundTargetPointContentEditTxt" />
+
+            <TextView
+                android:id="@+id/refundWonTxt"
+                android:text="(0 원)"
+                android:textSize="30sp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/refundTargetPointContentEditTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/refundTargetPointContentEditTxt"
+                app:layout_constraintLeft_toRightOf="@id/refundPtTxt"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/refundBankTxt"
+                android:text="은행"
+                android:textSize="40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/refundTargetPointContentEditTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:id="@+id/refundBankContentEditTxt"
+                android:textSize="30sp"
+                android:textColor="@color/sub"
+                android:textColorHint="@color/sub"
+                android:backgroundTint="@color/sub"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/refundBankTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:id="@+id/refundAccountNumberTxt"
+                android:text="계좌번호"
+                android:textSize="40sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/refundBankContentEditTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:id="@+id/refundAccountNumberContentEditTxt"
+                android:textSize="30sp"
+                android:textColor="@color/sub"
+                android:textColorHint="@color/sub"
+                android:backgroundTint="@color/sub"
+                android:maxLength="14"
+                android:singleLine="true"
+                android:inputType="number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/refundAccountNumberTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:id="@+id/refundAfterRefundPointTxt"
+                android:text="환급후 남을 여따대포인트"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/refundAccountNumberContentEditTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/refundAfterRefundPointContentTxt"
+                android:text="0"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/refundAfterRefundPointTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/refundAfterRefundPointPtTxt"
+                android:text="pt"
+                android:textSize="40sp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/refundAfterRefundPointContentTxt"
+                app:layout_constraintLeft_toRightOf="@id/refundAfterRefundPointContentTxt"
+                app:layout_constraintTop_toTopOf="@id/refundAfterRefundPointContentTxt"
+                android:layout_marginLeft="5dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/refundBtn"
+        android:src="@drawable/gradate_button"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:id="@+id/toAddReportTxt"
+        android:text="환급"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/refundBtn"
+        app:layout_constraintEnd_toEndOf="@+id/refundBtn"
+        app:layout_constraintStart_toStartOf="@+id/refundBtn"
+        app:layout_constraintTop_toTopOf="@+id/refundBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_find_park">
+
+    <fragment
+        android:id="@+id/fragment_find_park"
+        android:name="com.example.app.FindParkFragment"
+        android:label="주차장안내"
+        tools:layout="@layout/fragment_find_park" />
+
+    <fragment
+        android:id="@+id/fragment_find_gas_station"
+        android:name="com.example.app.FindGasStationFragment"
+        android:label="주유소안내"
+        tools:layout="@layout/fragment_find_gas_station" />
+
+    <fragment
+        android:id="@+id/fragment_shared_park"
+        android:name="com.example.app.SharedParkFragment"
+        android:label="공유주차장"
+        tools:layout="@layout/fragment_shared_park" />
+
+    <fragment
+        android:id="@+id/fragment_discount_park_report"
+        android:name="com.example.app.DiscountParkReportFragment"
+        android:label="주차장제보"
+        tools:layout="@layout/fragment_discount_park_report" />
+
+    <fragment
+        android:id="@+id/fragment_info"
+        android:name="com.example.app.InfoFragment"
+        android:label="서비스안내"
+        tools:layout="@layout/fragment_info" />
+</navigation>
